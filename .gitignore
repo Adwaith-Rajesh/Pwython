@@ -1,0 +1,5 @@
+# Cached python imports
+**/__pycache__
+
+# Scripts used for testing
+test.py
