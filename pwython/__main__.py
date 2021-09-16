@@ -1,5 +1,5 @@
 from random import choice, randint
-from re import sub
+from re import sub, split, findall
 from string import ascii_letters
 from subprocess import PIPE, Popen
 from sys import argv, executable, stderr
@@ -15,15 +15,21 @@ def owoify(text):
     text = sub("[RLV]", "W", text)
     text = sub("ee", "wee", text)
 
-    text = text.split()
+    # This is to convert the string into a array whilst maintaining whitespace
+    words = split(r"\s+", text)
+    whitespace = findall(r"\s+", text)
+
+    text = [None] * (len(words) + len(whitespace))
+    text[::2], text[1::2] = words, whitespace
 
     # Random stutter
     for idx, word in enumerate(text):
-        if word[0] in ascii_letters and word[0].lower() not in "aeiouw":
-            if randint(1, 15) == 1:
-                text[idx] = f"{word[0]}-{word}"
+        if len(word) > 0:
+            if word[0] in ascii_letters and word[0].lower() not in "aeiouw":
+                if randint(1, 15) == 1:
+                    text[idx] = f"{word[0]}-{word}"
 
-    text = " ".join(text)
+    text = "".join(text)
 
     return text
 
