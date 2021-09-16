@@ -1,5 +1,6 @@
 from random import choice, randint
 from re import sub
+from string import ascii_letters
 from subprocess import PIPE, Popen
 from sys import argv, executable, stderr
 
@@ -13,6 +14,16 @@ def owoify(text):
     text = sub("[rlv]", "w", text)
     text = sub("[RLV]", "W", text)
     text = sub("ee", "wee", text)
+
+    text = text.split()
+
+    # Random stutter
+    for idx, word in enumerate(text):
+        if word[0] in ascii_letters and word[0].lower() not in "aeiouw":
+            if randint(1, 15) == 1:
+                text[idx] = f"{word[0]}-{word}"
+
+    text = " ".join(text)
 
     return text
 
