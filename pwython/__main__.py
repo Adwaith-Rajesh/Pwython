@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 from re import sub
 from subprocess import PIPE, Popen
 from sys import argv, executable, stderr
@@ -23,7 +23,11 @@ def main():
     while process.poll() is None:
         for line in iter(process.stderr.readline, b""):
             if line == b"Traceback (most recent call last):\n":
-                stderr.write(f"{choice(pronouns)}, {choice(remarks)} {choice(reactions)}\n")
+                # Easter egg :)
+                if randint(1, 10) == 1:
+                    stderr.write(f"{choice(pronouns)}, {choice(remarks)}, you sussy baka {choice(reactions)}\n")
+                else:
+                    stderr.write(f"{choice(pronouns)}, {choice(remarks)} {choice(reactions)}\n")
 
             stderr.write(owoify(line))
 
