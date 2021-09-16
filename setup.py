@@ -9,7 +9,7 @@ setup(
     packages=["pwython"],
     entry_points={
         "console_scripts": [
-            "pwython = pwython.__main__",
+            "pwython = pwython.__main__:main",
         ]
     }
 )

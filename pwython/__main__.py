@@ -17,11 +17,16 @@ def owoify(text):
     return text
 
 
-process = Popen([executable] + argv[1:], stderr=PIPE)
+def main():
+    process = Popen([executable] + argv[1:], stderr=PIPE)
 
-while process.poll() is None:
-    for line in iter(process.stderr.readline, b""):
-        if line == b"Traceback (most recent call last):\n":
-            stderr.write(f"{choice(pronouns)}, {choice(remarks)} {choice(reactions)}\n")
+    while process.poll() is None:
+        for line in iter(process.stderr.readline, b""):
+            if line == b"Traceback (most recent call last):\n":
+                stderr.write(f"{choice(pronouns)}, {choice(remarks)} {choice(reactions)}\n")
 
-        stderr.write(owoify(line))
+            stderr.write(owoify(line))
+
+
+if __name__ == "__main__":
+    main()
