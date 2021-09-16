@@ -7,9 +7,12 @@ pronouns = [
 reactions = [
     ">~<",
     ">-<",
+    ">w<",
+    "^w^",
     "owo",
     "uwu",
-    "*blushes*"
+    "*blushes*",
+    "(*^ω^)"
 ]
 
 remarks = [
