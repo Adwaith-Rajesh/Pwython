@@ -12,7 +12,7 @@ After installing you can delete the `Pwython` directory which you just cloned. I
 ### Usage
 You can use pwython exaclty as you would use python, just replace `python` with `python -m pwython`. For example:
 
-This is how you would run your python code the "traditional" way
+This is how you would run your python code the "traditional" way:
 
 ```
 python main.py
