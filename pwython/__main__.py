@@ -3,6 +3,8 @@ from re import sub
 from subprocess import PIPE, Popen
 from sys import argv, executable, stderr
 
+from .responses import pronouns, reactions, remarks
+
 
 def owoify(text):
     if type(text) == bytes:
@@ -14,10 +16,6 @@ def owoify(text):
 
     return text
 
-
-pronouns = open("pwython/pronouns.txt").read().splitlines()
-remarks = open("pwython/remarks.txt").read().splitlines()
-reactions = open("pwython/reactions.txt").read().splitlines()
 
 process = Popen([executable] + argv[1:], stderr=PIPE)
 
