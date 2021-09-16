@@ -26,7 +26,7 @@ def owoify(text):
     for idx, word in enumerate(text):
         if len(word) > 0:
             if word[0] in ascii_letters and word[0].lower() not in "aeiouw":
-                if randint(1, 15) == 1:
+                if randint(1, 10) == 1:
                     text[idx] = f"{word[0]}-{word}"
 
     text = "".join(text)
