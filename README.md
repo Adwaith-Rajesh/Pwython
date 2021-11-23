@@ -6,7 +6,7 @@
     <img src="https://shields.io/github/issues/SystematicError/Pwython?style=for-the-badge&label=Issues">
 </h2>
 
-<img src="https://repository-images.githubusercontent.com/406885415/cecce01b-1773-46f7-be4e-545db62766ae" align="center">
+<img src="https://raw.githubusercontent.com/SystematicError/Pwython/master/pwython-banner.jpg" align="center">
 
 &nbsp;
 
