@@ -4,3 +4,4 @@
 # Stuff for testing
 test.py
 env/
+*.egg-info

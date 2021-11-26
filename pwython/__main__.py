@@ -36,10 +36,11 @@ def owoify(text):
 
 def main():
     process = Popen([executable] + argv[1:], stderr=PIPE)
-
+    error = False
     while process.poll() is None:
         for line in iter(process.stderr.readline, b""):
             if line == b"Traceback (most recent call last):\n":
+                error = True
                 # Easter egg :)
                 if randint(1, 10) == 1:
                     stderr.write(f"{choice(pronouns)}, {choice(remarks)}, you sussy baka {choice(reactions)}\n")
@@ -48,6 +49,7 @@ def main():
 
             stderr.write(owoify(line))
 
+    return 1 if error else 0
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
